@@ -36,7 +36,7 @@ class ViewStudents extends React.Component {
   }
 
   async startfunc() {
-    await Axios.get(`http://127.0.0.1:4001/viewallstudents`)
+    await Axios.get(`http://18.221.66.220:4001/viewallstudents`)
       .then(data => {
         console.log(data.data);
         this.setState({ students: data.data });
@@ -58,7 +58,7 @@ class ViewStudents extends React.Component {
   viewDetailsClickHandler(event) {
     event.preventDefault();
     console.log(event.target.value);
-    Axios.post("http://127.0.0.1:4001/getStudentBasicDetail", {
+    Axios.post("http://18.221.66.220:4001/getStudentBasicDetail", {
       email: event.target.value
     })
       .then(data => {

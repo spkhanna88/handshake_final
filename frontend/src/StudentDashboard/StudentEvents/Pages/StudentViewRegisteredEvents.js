@@ -13,7 +13,9 @@ class StudentViewRegisteredEvents extends React.Component {
   startfunc() {
     //event.preventDefault();
     let email = localStorage.getItem("email");
-    Axios.post("http://127.0.0.1:4001/studentviewregevent", { email: email })
+    Axios.post("http://18.221.66.220:4001/studentviewregevent", {
+      email: email
+    })
       .then(data => {
         const student = data.data[0];
         var objectlength = Object.keys(student).length;
@@ -23,7 +25,7 @@ class StudentViewRegisteredEvents extends React.Component {
             var EVENTid = Object.keys(student)[i];
             var eventid = EVENTid.replace(/\D/g, "");
             console.log(eventid);
-            Axios.post("http://127.0.0.1:4001/studentviewregeventUSINGID", {
+            Axios.post("http://18.221.66.220:4001/studentviewregeventUSINGID", {
               eventid: eventid
             })
               .then(data => {

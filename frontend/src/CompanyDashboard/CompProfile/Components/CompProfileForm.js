@@ -21,7 +21,7 @@ class compProfileForm extends React.Component {
     };
 
     //this.editorsave = this.editorsave.bind(this);
-    this.editorsave = "http://127.0.0.1:4001/saveCompProfile";
+    this.editorsave = "http://18.221.66.220:4001/saveCompProfile";
 
     this.onTextChangeHandler = this.onTextChangeHandler.bind(this);
     this.onSubmitHandler = this.onSubmitHandler.bind(this);
@@ -51,7 +51,7 @@ class compProfileForm extends React.Component {
   startfunc() {
     //event.preventDefault();
     let email = localStorage.getItem("email");
-    Axios.post("http://127.0.0.1:4001/viewCompProfile", { email: email })
+    Axios.post("http://18.221.66.220:4001/viewCompProfile", { email: email })
       .then(data => {
         console.log(data);
         this.setState({
@@ -83,12 +83,13 @@ class compProfileForm extends React.Component {
     data.append("file", this.state.file);
     data.append(email, { email: email });
     console.log(data);
-    await Axios.post("http://127.0.0.1:4001/uploadCompanyPicture", data).then(
-      data => {
-        console.log(data.data);
-        this.setState({ filelocation: data.data });
-      }
-    );
+    await Axios.post(
+      "http://18.221.66.220:4001/uploadCompanyPicture",
+      data
+    ).then(data => {
+      console.log(data.data);
+      this.setState({ filelocation: data.data });
+    });
   }
 
   componentWillMount() {

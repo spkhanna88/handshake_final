@@ -14,7 +14,7 @@ class StudentViewApplications extends React.Component {
   async startfunc() {
     const email = localStorage.getItem("email");
 
-    await Axios.post("http://127.0.0.1:4001/studentviewjobapplication", {
+    await Axios.post("http://18.221.66.220:4001/studentviewjobapplication", {
       email: email
     })
       .then(data => {

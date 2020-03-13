@@ -19,7 +19,7 @@
 //   startfunc() {
 //     //event.preventDefault();
 //     let email = localStorage.getItem("email");
-//     Axios.get("http://127.0.0.1:4001/studentviewevent")
+//     Axios.get("http://18.221.66.220:4001/studentviewevent")
 //       .then(data => {
 //         //console.log(data);
 //         this.setState({
@@ -47,7 +47,7 @@
 //     var eventid = "Event" + event.target.name;
 //     var id = event.target.name;
 //     var companymajor = event.target.value;
-//     Axios.post("http://127.0.0.1:4001/registerevent", {
+//     Axios.post("http://18.221.66.220:4001/registerevent", {
 //       studentemail: email,
 //       eventid: eventid
 //     })
@@ -143,7 +143,7 @@ class StudentViewAllEvents extends React.Component {
   startfunc() {
     //event.preventDefault();
     let email = localStorage.getItem("email");
-    Axios.get("http://127.0.0.1:4001/studentviewevent")
+    Axios.get("http://18.221.66.220:4001/studentviewevent")
       .then(data => {
         //console.log(data);
         this.setState({
@@ -165,7 +165,7 @@ class StudentViewAllEvents extends React.Component {
     var eventid = "Event" + event.target.name;
     var id = event.target.name;
     var companymajor = event.target.value;
-    Axios.post("http://127.0.0.1:4001/registerevent", {
+    Axios.post("http://18.221.66.220:4001/registerevent", {
       studentemail: email,
       eventid: eventid
     })

@@ -3,7 +3,7 @@ import axios from "axios";
 
 function SigninAction(data) {
   return dispatch => {
-    return axios.post("http://localhost:4001/companysignin", data);
+    return axios.post("http://18.221.66.220:4001/companysignin", data);
   };
 }
 

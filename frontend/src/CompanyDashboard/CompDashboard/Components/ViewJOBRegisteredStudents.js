@@ -21,7 +21,7 @@ class ViewJOBRegisteredStudents extends React.Component {
 
   statusChangeHandler(event) {
     event.preventDefault();
-    Axios.post("http://127.0.0.1:4001/updatestudentapplicationstatus", {
+    Axios.post("http://18.221.66.220:4001/updatestudentapplicationstatus", {
       applicationstatus: this.state.applicationstatus,
       studentemail: event.target.name,
       jobid: event.target.value
@@ -61,7 +61,7 @@ class ViewJOBRegisteredStudents extends React.Component {
   onClickHandler(event) {
     event.preventDefault();
     document.getElementById("control").readOnly = true;
-    Axios.post("http://127.0.0.1:4001/getStudentBasicDetail", {
+    Axios.post("http://18.221.66.220:4001/getStudentBasicDetail", {
       email: event.target.value
     })
       .then(data => {

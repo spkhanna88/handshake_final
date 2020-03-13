@@ -37,7 +37,7 @@ class CompanyAddJob extends React.Component {
     else {
       let email = localStorage.getItem("email");
       await this.setState({ companyemail: email });
-      Axios.post("http://127.0.0.1:4001/companyaddjob", this.state)
+      Axios.post("http://18.221.66.220:4001/companyaddjob", this.state)
         .then(data => {
           console.log("data");
           swal("", "Job Added Successfully", "success");

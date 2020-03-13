@@ -37,7 +37,7 @@ class StudentJobSearch extends React.Component {
   }
 
   startfunc() {
-    Axios.get(`http://127.0.0.1:4001/studentviewalljobs`)
+    Axios.get(`http://18.221.66.220:4001/studentviewalljobs`)
       // then((res) => res.json()).then((data) => {
       //   this.setState({users: data})
       // })}

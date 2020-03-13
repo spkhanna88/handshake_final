@@ -24,7 +24,7 @@ class ViewCompProfileForm extends React.Component {
   async startfunc() {
     //event.preventDefault();
     let email = localStorage.getItem("email");
-    Axios.post("http://127.0.0.1:4001/viewCompProfile", { email: email })
+    Axios.post("http://18.221.66.220:4001/viewCompProfile", { email: email })
       .then(data => {
         console.log(data);
         this.setState({

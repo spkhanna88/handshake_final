@@ -31,7 +31,7 @@ class AddEventForm extends React.Component {
     this.setState({ errors: {} });
     let email = localStorage.getItem("email");
     await this.setState({ authemail: email });
-    Axios.post("http://127.0.0.1:4001/addeventform", this.state)
+    Axios.post("http://18.221.66.220:4001/addeventform", this.state)
       .then(data => {
         console.log("data");
         this.setState({

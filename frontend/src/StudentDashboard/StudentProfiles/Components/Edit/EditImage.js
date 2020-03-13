@@ -19,7 +19,9 @@ class EditImage extends React.Component {
   startfunc() {
     //event.preventDefault();
     let email = localStorage.getItem("email");
-    Axios.post("http://127.0.0.1:4001/getStudentBasicDetail", { email: email })
+    Axios.post("http://18.221.66.220:4001/getStudentBasicDetail", {
+      email: email
+    })
       .then(data => {
         this.setState({
           filelocation: "/images/students/" + data.data.filelocation
@@ -36,17 +38,18 @@ class EditImage extends React.Component {
     const data = new FormData();
     data.append("file", this.state.file);
     data.append(email, { email: email });
-    await Axios.post("http://127.0.0.1:4001/uploadstudentpicture", data).then(
-      data => {
-        this.setState({ filelocation: data.data });
-      }
-    );
+    await Axios.post(
+      "http://18.221.66.220:4001/uploadstudentpicture",
+      data
+    ).then(data => {
+      this.setState({ filelocation: data.data });
+    });
   }
 
   saveImageHandler(event) {
     event.preventDefault();
     const email = localStorage.getItem("email");
-    Axios.post("http://127.0.0.1:4001/savestudentpicture", {
+    Axios.post("http://18.221.66.220:4001/savestudentpicture", {
       email: email,
       filelocation: this.state.filelocation
     }).then(data => {

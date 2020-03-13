@@ -37,7 +37,7 @@ class StudentViewandRegister extends React.Component {
     const data = new FormData();
     data.append("file", this.state.file);
     data.append(email, { email: email });
-    await Axios.post("http://127.0.0.1:4001/studentuploadresume", data)
+    await Axios.post("http://18.221.66.220:4001/studentuploadresume", data)
       .then(data => {
         this.setState({ filelocation: data.data });
       })
@@ -54,7 +54,10 @@ class StudentViewandRegister extends React.Component {
     event.preventDefault();
     let email = localStorage.getItem("email");
     await this.setState({ studentemail: email });
-    Axios.post("http://127.0.0.1:4001/studentregisterjobandresume", this.state)
+    Axios.post(
+      "http://18.221.66.220:4001/studentregisterjobandresume",
+      this.state
+    )
       .then(data => {
         if (data.data.success === true) {
           document.getElementById("disabled").textContent = "Registered";

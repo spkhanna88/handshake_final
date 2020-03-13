@@ -28,7 +28,7 @@ class CompanyViewJobs extends Component {
   startfunc() {
     //event.preventDefault();
     let email = localStorage.getItem("email");
-    Axios.post("http://127.0.0.1:4001/companyviewjobs", {
+    Axios.post("http://18.221.66.220:4001/companyviewjobs", {
       companyemail: email
     })
       .then(data => {
@@ -48,7 +48,7 @@ class CompanyViewJobs extends Component {
     event.preventDefault();
     let jobid = event.target.name;
     console.log(jobid);
-    Axios.post("http://127.0.0.1:4001/companyjobstudentviewer", {
+    Axios.post("http://18.221.66.220:4001/companyjobstudentviewer", {
       jobid: jobid
     })
       .then(data => {
